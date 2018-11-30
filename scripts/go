@@ -1,0 +1,13 @@
+#!/bin/bash
+
+binaryName=""
+for var in "$@"
+do
+	if [[ $var -eq "build" ]]
+	then
+    	binaryName="-o $(basename $PWD)_$BINNAME" 
+	fi
+done
+
+#echo $binaryName
+${GOROOT}/bin/go ${*} ${binaryName}
