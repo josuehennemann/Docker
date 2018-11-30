@@ -3,7 +3,7 @@
 binaryName=""
 for var in "$@"
 do
-	if [[ $var -eq "build" ]]
+	if [ "$var" = "build" ]
 	then
     	binaryName="-o $(basename $PWD)_$BINNAME" 
 	fi
